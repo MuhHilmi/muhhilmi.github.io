@@ -1,9 +1,11 @@
-
 import { useState } from "react";
 
 import Header from "./components/layout/Header";
 import Hero from "./components/hero/Hero";
 import SectionLabel from "./components/common/SectionLabel";
+
+import AboutSection from "./sections/AboutSection";
+import ProjectSection from "./sections/ProjectSection";
 
 import { NAV_TABS } from "./data/navigation";
 
@@ -19,6 +21,10 @@ function App() {
     });
   }
 
+  const remainingSections = NAV_TABS.filter(
+    (tab) => ~["about", "projects"].includes(tab.id)
+  );
+
   return (
     <div className="min-h-screen bg-[#0A0E14] text-slate-100">
       <Header
@@ -27,14 +33,16 @@ function App() {
       />
       <main className="mx-auto max-w-5xl px-4 sm:px-6">
         <Hero />
-        {NAV_TABS.map((tab, index) => (
+        <AboutSection />
+        <ProjectSection />
+        {remainingSections.map((tab, index) => (
           <section
             key={tab.id}
             id={tab.id}
             className="min-h-[60vh] scroll-mt-16 py-16"
           >
             <SectionLabel
-              index={String(index + 1).padStart(2, "0")}
+              index={String(index + 3).padStart(2, "0")}
               title={tab.id.charAt(0).toUpperCase() + tab.id.slice(1)}
             />
             <p className="text-slate-400">
