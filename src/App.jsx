@@ -1,32 +1,44 @@
-import { GitCompareArrows, MailIcon, Download } from "lucide-react";
-
-import Avatar from "./components/common/Avatar";
+import { useState } from "react";
+import Header from "./components/layout/Header";
 import SectionLabel from "./components/common/SectionLabel";
-import ActionLink from "./components/common/ActionLink";
+import { NAV_TABS } from "./data/navigation";
 
 function App() {
+  const [activeSection, setActiveSection] = useState("about");
+
+  function handleNavigate(id) {
+    setActiveSection(id);
+    
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
   return (
-    <main className="mx-auto min-h-screen max-w-5xl px-6 py-16">
-      <SectionLabel index="01" title="Tentang" />
-      <div className="rounded-lg border-slate-800 bg-slate-900 p-8">
-        <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-          <Avatar name="Muh. Hilmi Abdul Aziz" size={96} />
-          <div>
-            <h1 className="text-2xl font-bold">
-              Muh. Hilmi Abdul Aziz
-            </h1>
-            <p className="mt-2 text-slate-400">
-              Junior Web Developer
-            </p>
-          </div>
-        </div>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <ActionLink href="mailto:muhhilmiabdulaziz@gmail.com" icon={MailIcon} variant="primary">Hubungi Saya</ActionLink>
-          <ActionLink href="/cv.pdf" icon={Download} variant="teal" download>Download CV</ActionLink>
-          <ActionLink href="https://github.com/muhhilmi" icon={GitCompareArrows} variant="outline" external>GitHub</ActionLink>
-        </div>
-      </div>
-    </main>
+    <div className="min-h-screen bg-[#0A0E14] text-slate-100">
+      <Header
+        activeSection={activeSection}
+        onNavigate={handleNavigate}
+      />
+
+      <main className="mx-auto max-w-5xl px-4 sm:px-6">
+        {NAV_TABS.map((tab, index) => (
+          <section
+            key={tab.id}
+            id={tab.id}
+            className="min-h-[60vh] scroll-mt-16 py-16"
+          >
+            <SectionLabel
+              index={String(index + 1).padStart(2, "0")}
+              title={(tab.id.charAt(0).toUpperCase() + tab.id.slice(1))}
+            />
+            <p className="text-slate-400">
+              Konten {tab.label} akan dibuat pada tahap selanjutnya.</p>
+          </section>
+        ))}
+      </main>
+    </div>
   );
 }
 
