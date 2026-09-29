@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import Hero from "./components/hero/Hero";
-import SectionLabel from "./components/common/SectionLabel";
-
 import AboutSection from "./sections/AboutSection";
 import ProjectSection from "./sections/ProjectSection";
-
-import { NAV_TABS } from "./data/navigation";
+import ExperienceSection from "./sections/ExperienceSection";
+import SkillsSection from "./sections/SkillsSection";
+import ContactSection from "./sections/ContactSection";
 
 function App() {
   const [activeSection, setActiveSection] = useState("about");
@@ -21,10 +21,6 @@ function App() {
     });
   }
 
-  const remainingSections = NAV_TABS.filter(
-    (tab) => ~["about", "projects"].includes(tab.id)
-  );
-
   return (
     <div className="min-h-screen bg-[#0A0E14] text-slate-100">
       <Header
@@ -35,21 +31,10 @@ function App() {
         <Hero />
         <AboutSection />
         <ProjectSection />
-        {remainingSections.map((tab, index) => (
-          <section
-            key={tab.id}
-            id={tab.id}
-            className="min-h-[60vh] scroll-mt-16 py-16"
-          >
-            <SectionLabel
-              index={String(index + 3).padStart(2, "0")}
-              title={tab.id.charAt(0).toUpperCase() + tab.id.slice(1)}
-            />
-            <p className="text-slate-400">
-              Konten {tab.label} akan dibuat pada tahap berikutnya.
-            </p>
-          </section>
-        ))}
+        <ExperienceSection />
+        <SkillsSection />
+        <ContactSection />
+        <Footer />
       </main>
     </div>
   );

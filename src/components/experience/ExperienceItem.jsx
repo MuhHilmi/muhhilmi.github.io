@@ -1,4 +1,3 @@
-
 import { GitCommitHorizontal } from "lucide-react";
 
 function ExperienceItem({ experience }) {
