@@ -51,3 +51,48 @@ export const PROJECT = [
         repo: "#",
     },
 ];
+
+export const EXPERIENCE = [
+    {
+        hash: "a3f9c1e",
+        date: "2024 — Sekarang",
+        title: "Senior Frontend Engineer",
+        org: "PT Teknologi Nusantara",
+        message: "Memimpin migrasi arsitektur frontend ke React 18 dan membangun design system internal yang dipakai 6 tim produk.",
+    },
+    {
+        hash: "7d2e881",
+        date: "2022 — 2024",
+        title: "Full-Stack Developer",
+        org: "Startup Digitalku",
+        message: "Membangun platform e-commerce dari nol, menangani traffic 50rb+ pengguna aktif per bulan.",
+    },
+    {
+        hash: "f01b4a6",
+        date: "2020 — 2022",
+        title: "Junior Web Developer",
+        org: "Agensi Kreatif Studio",
+        message: "Mengembangkan website klien menggunakan React dan WordPress, fokus pada performa dan aksesibilitas.",
+    },
+];
+
+export const SKILLS = {
+    frontend: [
+        { name: "react", version: "^18.2.0" },
+        { name: "typescript", version: "^5.4.0" },
+        { name: "tailwindcss", version: "^3.4.0" },
+        { name: "next.js", version: "^14.1.0" },
+    ],
+    backend: [
+        { name: "node.js", version: "^20.11.0" },
+        { name: "express", version: "^4.19.0" },
+        { name: "postgresql", version: "^16.0.0" },
+        { name: "redis", version: "^7.2.0" },
+    ],
+    tools: [
+        { name: "docker", version: "^25.0.0" },
+        { name: "git", version: "^2.43.0" },
+        { name: "vitest", version: "^1.3.0" },
+        { name: "figma", version: "n/a" },
+    ],
+};
