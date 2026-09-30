@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/hero/Hero";
@@ -8,15 +6,20 @@ import ProjectSection from "./sections/ProjectSection";
 import ExperienceSection from "./sections/ExperienceSection";
 import SkillsSection from "./sections/SkillsSection";
 import ContactSection from "./sections/ContactSection";
+import useActiveSection from "./hooks/useActiveSection";
 
 function App() {
-  const [activeSection, setActiveSection] = useState("about");
+  const { activeSection, setActiveSection } = useActiveSection();
 
   function handleNavigate(id) {
     setActiveSection(id);
 
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
     document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
+      behavior: reduceMotion ? "instant" : "smooth",
       block: "start",
     });
   }

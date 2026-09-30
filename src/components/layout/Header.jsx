@@ -23,7 +23,7 @@ function Header({ activeSection, onNavigate }) {
                     </div>
 
                     {/* Navigasi desktop */}
-                    <nav aria-label="Navigasi utama" className="hidden items-center gap-1 md:flex">
+                    <nav aria-label="Navigasi utama" className="hidden items-center gap-1 lg:flex">
                         {NAV_TABS.map((tab) => {
                             const isActive = activeSection === tab.id;
 
@@ -45,7 +45,7 @@ function Header({ activeSection, onNavigate }) {
                     {/* Tombol menu mobile */}
                     <button
                         type="button"
-                        className="text-slate-100 md:hidden"
+                        className="text-slate-100 lg:hidden"
                         onClick={() => setMenuOpen((prev) => !prev)}
                         aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
                         aria-expanded={menuOpen}
@@ -60,7 +60,7 @@ function Header({ activeSection, onNavigate }) {
                     <nav
                         id="mobile-navigation"
                         aria-label="Navigasi mobile"
-                        className="flex flex-col gap-1 pb-3 md:hidden"
+                        className="flex flex-col gap-1 pb-3 lg:hidden"
                     >
                         {NAV_TABS.map((tab) => {
                             const isActive = activeSection === tab.id;

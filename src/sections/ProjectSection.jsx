@@ -10,7 +10,7 @@ function ProjectSection() {
             className="scroll-mt-16 py-16"
         >
             <SectionLabel index="02" title="Proyek" />
-            <div className="grip gap-5 sm:grid-cols-2">
+            <div className="grip gap-5 md:grid-cols-2">
                 {PROJECT.map((project) => (
                     <ProjectCard
                         key={project.id}

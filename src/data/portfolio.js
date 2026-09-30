@@ -9,7 +9,7 @@ export const PROFILE = {
     github: "https://github.com/muhhilmi",
     linkedin: "https://linkedin.com/in/muh-hilmi-abdul-aziz-798381325/",
     photo: photoProfile,
-    cvUrl: "",
+    cvUrl: "/CV Muh. Hilmi Abdul Aziz.pdf",
     portfolioPdfUrl: "",
 };
 
@@ -21,7 +21,7 @@ export const PROJECT = [
         description: "Dashboard analitik real-time untuk toko online dengan visualisasi penjualan, manajemen stok, dan laporan otomatis.",
         stack: ["React", "Typescript", "Node.JS", "PostgreSQL"],
         demo: "#",
-        repo: "#",
+        repo: "https://github.com/muhhilmi/repositories/",
     },
     {
         id: 2,

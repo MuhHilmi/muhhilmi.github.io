@@ -12,6 +12,16 @@ function useTypewriter(lines, speed = 28, startDelay = 300) {
         setDisplayed([]);
         setDone(false);
 
+        const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (reduceMotion) {
+            setDisplayed(lines);
+            setDone(true);
+            return;
+        }
+
         function tick() {
             // Seluruh barus sudah selesai diketik
             if (lineIndex >= lines.length) {
