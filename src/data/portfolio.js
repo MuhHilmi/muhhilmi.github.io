@@ -37,9 +37,9 @@ export const PROJECT = [
         file: "monopoli.jsx",
         title: "Aplikasi Monopoli",
         description: "Aplikasi Monopoli ini dirancang untuk mempermudah jalannya permainan dengan membantu menentukan pemain, mengelola keuangan, serta mengatur kartu kepemilikan secara praktis dan terstruktur.",
-        stack: ["React.JS", "TailwindCSS", "SQLite"],
-        demo: "#",
-        repo: "#",
+        stack: ["Laravel", "React.JS", "TailwindCSS", "SQLite"],
+        demo: "https://monopoli.freehosting.dev",
+        repo: "https://github.com/MuhHilmi/MonopoliApp",
     },
     {
         id: 4,
@@ -56,7 +56,7 @@ export const PROJECT = [
         title: "Mini Notion Clone",
         description: "Aplikasi yang serupa dengan Notion App dengan model yang lebih sederhana.",
         stack: ["React.JS", "Prisma", "Express.JS", "TailwindCSS", "MySQL"],
-        demo: "#",
+        demo: "https://mini-notion-clone-five.vercel.app/",
         repo: "#",
     },
 ];
